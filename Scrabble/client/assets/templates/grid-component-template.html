@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row" id="grid-component">
+        <div class="granny-overlay col-md-9 col-sm-12">
+            <p class="player-name">
+                Votre nom : {{ playerName }}
+            </p>
+            <table id="grid">
+                <tr>
+                    <td class="number"></td>
+                    <td class="number">1</td>
+                    <td class="number">2</td>
+                    <td class="number">3</td>
+                    <td class="number">4</td>
+                    <td class="number">5</td>
+                    <td class="number">6</td>
+                    <td class="number">7</td>
+                    <td class="number">8</td>
+                    <td class="number">9</td>
+                    <td class="number">10</td>
+                    <td class="number">11</td>
+                    <td class="number">12</td>
+                    <td class="number">13</td>
+                    <td class="number">14</td>
+                    <td class="number">15</td>
+                </tr>
+                <tr *ngFor="let row of cells; let i = index">
+                    <td class="number">{{letterArray[i]}}</td>
+                    <td *ngFor="let cell of row; let j = index" id="{{ 'coord_' + i + '_' + j }}" [ngClass]="'color_' + cell.color">
+                        {{ cell.letter }}
+                    </td>
+                </tr>
+            </table>
+            <my-support></my-support>
+        </div>
+        <div class="col-md-3 col-sm-12 sidebar">
+            <my-game-status></my-game-status>
+            <my-chat></my-chat>
+        </div>
+    </div>
+</div>

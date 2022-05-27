@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html, main, .container-fluid {
+    height: 100%;
+}
+
+.game-selection {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:active,
+.btn-default:visited,
+.btn-default:focus {
+    background-color: #296f03;
+    border-color: #296f03;
+    color: #ffffff;
+    margin: 5px 0;
+    display: block;
+    font-size: 16px;
+}

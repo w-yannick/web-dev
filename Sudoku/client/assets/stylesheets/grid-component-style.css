@@ -1,0 +1,92 @@
+div.grid {
+    color: #333333;
+    height: 100%;
+    display: flex;
+    overflow-y: auto;
+}
+
+div.background-grey {
+    background-color: #f0f0f0;
+}
+
+div.background-red {
+    background-color: #b41010;
+}
+
+div.grid table {
+    text-align: center;   
+    font-size: 24px;
+    border: 3px solid #333333;
+    margin: auto;
+}
+
+div.grid table td {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #333333;
+    background-color: #f0f0f0;
+}
+
+div.grid table td input {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    text-align: center;
+    border: 0;
+    color: #b41010;
+    background-color: #f0f0f0;
+}
+
+div.grid table td input.selected {
+    background-color: #cccccc;
+}
+
+div.grid table td.border-right {
+    border-right: 3px solid #333333;
+}
+
+div.grid table td.border-bottom {
+    border-bottom: 3px solid #333333;
+}
+
+div.grid table .hidden {
+    display: none;
+}
+
+div.grid img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+}
+
+div.dashboard {
+    background-color: #333333;
+    color: #f0f0f0;
+    height: 100%;
+    padding: 10px 30px;
+    font-size:24px;
+    overflow-y: auto;
+}
+
+div.dashboard h1 {
+    font-size:50px;
+}
+
+div.dashboard .timer {
+    margin: 40px 0 20px 0;
+}
+
+div.dashboard .status {
+    margin: 0 0 40px 0;
+}
+
+div.dashboard .status .user {
+    margin: 0 30px 0 0;
+}
+
+div.dashboard .status .difficulty {
+    display: inline-block;
+}

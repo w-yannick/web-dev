@@ -1,0 +1,24 @@
+<div class="chat">
+	<div class="chat-box">
+		<div class="chat-logs">
+			<ul class="chat-logs-filter">
+				<li *ngFor="let userMessage of messages">
+					<div *ngIf="userMessage.isCommand" class="cmd">
+						<span class="name">{{ userMessage.from }}</span> : {{ userMessage.content }}
+					</div>
+					<div *ngIf="!userMessage.isCommand" class="normal">
+						<span class="name">{{ userMessage.from }}</span> : {{ userMessage.content }}
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="chat-form row">
+		<div class="col-xs-8 chat-input">
+			<input [(ngModel)]="messageContent" placeholder="Votre message" id="chat-input">
+		</div>
+		<div class="col-xs-4 chat-button">
+			<button (click)="send()">Envoyer</button>
+		</div>
+	</div>
+</div>

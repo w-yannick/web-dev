@@ -1,0 +1,73 @@
+<div class="grid col-sm-9" [ngClass]="{'background-grey': isValid, 'background-red': !isValid }">
+    <img *ngIf="isCurrentlyLoading" src="/assets/images/spin.gif">
+    <table [ngClass]="isCurrentlyLoading ? 'hidden' : ''">
+        <tr *ngFor="let row of grid; let i = index">
+            <td *ngFor="let col of row; let j = index"
+                [ngClass]="
+                    {
+                        'border-right': ((j === 2) || (j === 5)),
+                        'border-bottom': ((i === 2) || (i === 5))
+                    }">
+                <span *ngIf="!grid[i][j]">
+                    <input id="{{ i }}_{{ j }}" [(ngModel)]="inputGrid[i][j]" maxlength="1" (ngModelChange)="checkCompletion()" (ngModelChange)= "checkInput(i, j)"
+                            (focus)="setSelection(i,j)" (click)="setSelection(i,j)" [ngClass]="{'selected': ((j == getSelection()['column']) && (i == getSelection()['row']))}">
+                </span>
+                <span *ngIf="grid[i][j]">
+                    {{ grid[i][j] }}
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="dashboard col-sm-3">
+    <h1>Sudoku</h1>
+    <div *ngIf="getTimerVisibility()" class="timer">
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+        <span *ngIf="getTime()['minutes'] < 10">0</span>{{ getTime()['minutes'] }}:<span *ngIf="getTime()['seconds'] % 60 < 10">0</span>{{ getTime()['seconds'] % 60 }}
+    </div>
+    <p class="status">
+        <span class="user">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            {{ this.gameStatusService.getPlayerName() }}
+        </span>
+        <span class="difficulty">
+            <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+            {{ this.gameStatusService.getDifficulty() === "easy" ? "Facile" : "Difficile" }}
+        </span>
+    </p>
+    <button *ngIf="getTimerVisibility()" type="button" class="btn btn-default" (click)="toggleTimer()">
+        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+        Masquer le timer
+    </button>
+    <button *ngIf="!getTimerVisibility()" type="button" class="btn btn-default" (click)="toggleTimer()">
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span>
+        Afficher le timer
+    </button>
+    <button type="button" class="btn btn-default" (click)="reset()">
+        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+        Réinitialiser
+    </button>
+    <button type="button" class="btn btn-default" (click)="restart()">
+        <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+        Nouvelle partie
+    </button>
+    <button type="button" class="btn btn-default" (click)="restart(true)">
+        <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
+        Changer la difficulté
+    </button>
+    <button *ngIf="isCompletedGrid" type="button" class="btn btn-default btn-valid" (click)="checkGrid()">
+        <span class="glyphicon glyphicon-check" aria-hidden="true"> </span>
+        Vérifier la réponse
+    </button>
+</div>
+<div *ngIf="gameStatusService.getHasSubmitted() === true" class="modal-box-end">
+    <h3 *ngIf="gameStatusService.getHasWon() === true">Félicitation !</h3>
+    <h3 *ngIf="gameStatusService.getHasWon() === false">Échec : il y a des erreurs...</h3>
+    <p *ngIf="gameStatusService.getHasWon() === true">La partie a duré : {{ getTime()['minutes'] }} minutes {{ getTime()['seconds'] % 60 }}</p>
+    <button type="button" class="btn btn-default" (click)="hideModal()">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        Masquer
+    </button>
+</div>
+<div *ngIf="gameStatusService.getHasSubmitted() === true" class="modal-box-end-layer">
+</div>

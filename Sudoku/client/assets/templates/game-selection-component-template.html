@@ -1,0 +1,45 @@
+<div class="player-name-content">
+    <div class="player-name-input">
+
+        <div class="name">        
+            <input type="text"
+                required
+                minlength="2"
+                maxlength="15"
+                [(ngModel)]="name"
+                #nameInput="ngModel"
+                placeholder="Pseudonyme"
+            >
+        </div>
+        <div class="difficulty" *ngIf="!nameInput.errors">
+            <input
+            id="easy"
+            type="radio"
+            value="easy"
+            [(ngModel)]="difficulty"
+            #difficultyInput="ngModel"
+            ><label for="easy">Facile</label>
+            <input
+                id="hard"
+                type="radio"
+                value="hard"
+                [(ngModel)]="difficulty"
+                #difficultyInput="ngModel"
+            ><label for="hard">Difficile</label>
+        </div>
+
+        <button *ngIf="!nameInput.errors && difficulty !== undefined" type="button" class="btn btn-default" (click)="startSession()">
+            Commencer
+        </button>
+
+        <div class="errors" *ngIf="nameInput.errors && (nameInput.dirty || nameInput.touched)">
+            <div [hidden]="!nameInput.errors.required">
+                Veuillez entrer un nom.
+            </div>
+            <div [hidden]="!nameInput.errors.minlength">
+                Votre nom doit faire au moins 2 caractères.
+            </div>
+        </div>
+
+    </div>
+</div>

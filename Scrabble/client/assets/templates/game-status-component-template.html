@@ -1,0 +1,43 @@
+<div style="margin: 5px">
+    <div *ngIf="activePlayer != undefined" class="timer" colspan="3">
+        Fin du tour de {{activePlayer.name}} : {{ticks}} sec
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th class="name">Nom</th>
+        <th>Score</th>
+        <th>Lettres</th>
+    </tr>
+    <tr [ngClass]="{'selected': players[i].canPlay }" *ngFor="let player of players; let i = index">
+        <td class="name">
+            <s *ngIf="player.hasLeft && isEndOfParty">{{ player.name }}</s>
+            <b *ngIf=" !(player.hasLeft && isEndOfParty)">{{ player.name }}</b>
+        </td>
+        <td>{{ player.score }}</td>
+        <td>
+            <span *ngIf="player.numberOfLettersOnTheSupport < 7">
+                {{ player.numberOfLettersOnTheSupport }}
+            </span>
+        </td>
+    </tr>
+</table>
+<div style="margin: 5px">
+    <div *ngIf="isEndOfParty" class="chat-button">
+        <button class="filter" colspan="3" (click)="leaveParty()">
+            Quitter
+        </button>
+    </div>
+</div>
+
+
+<div *ngIf="(isEndOfParty === true) && (closeModal === false)" class="modal-box-end">
+    <h3><b>Fin de la partie</b></h3>
+    <h3>Le gagnant est: {{nameOfBestPlayer()}}</h3>
+    <button type="button" class="btn btn-default" (click)="hideModal()">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        Retour
+    </button>
+</div>
+<div *ngIf="modalCalled === true" class="modal-box-end-layer">
+</div>

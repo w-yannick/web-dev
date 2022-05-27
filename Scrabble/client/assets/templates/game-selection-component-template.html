@@ -1,0 +1,27 @@
+<div class="game-selection">
+    <div class="game-selection-form">
+
+        <div class="name">
+            <input type="text" required minlength="2" maxlength="15" [(ngModel)]="playerName" #nameInput="ngModel" placeholder="Pseudonyme">
+        </div>
+        <div class="groupsize" *ngIf="!nameInput.errors">
+            <input id="2" type="radio" value="2" [(ngModel)]="groupSize" #groupSizeInput="ngModel"><label for="2">2 joueurs</label>
+            <input id="3" type="radio" value="3" [(ngModel)]="groupSize" #groupSizeInput="ngModel"><label for="3">3 joueurs</label>
+            <input id="4" type="radio" value="4" [(ngModel)]="groupSize" #groupSizeInput="ngModel"><label for="4">4 joueurs</label>
+        </div>
+
+        <button *ngIf="!nameInput.errors && groupSize !== undefined" type="button" class="btn btn-default" (click)="startSession()">
+            Commencer
+        </button>
+
+        <div class="errors" *ngIf="nameInput.errors && (nameInput.dirty || nameInput.touched)">
+            <div [hidden]="!nameInput.errors.required">
+                Veuillez entrer un nom.
+            </div>
+            <div [hidden]="!nameInput.errors.minlength">
+                Votre nom doit faire au moins 2 caractères.
+            </div>
+        </div>
+
+    </div>
+</div>

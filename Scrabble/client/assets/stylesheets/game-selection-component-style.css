@@ -1,0 +1,55 @@
+div.game-selection {
+    display: flex;
+    height: 100%;
+}
+
+div.game-selection-form {
+    color: #f0f0f0;
+    font-size: 20px;
+    text-align: center;
+    height: 185px;
+    margin: auto;
+}
+
+div.game-selection-form .name input {
+    color: #333333;
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    border-radius: 7px;
+}
+
+div.game-selection-form .groupsize input[type=radio] {
+    display: none;
+}
+
+div.game-selection-form .groupsize input[type=radio]:checked + label:before {
+    background-color: #296f03;
+}
+
+div.game-selection-form .groupsize label {
+    font-weight: normal;
+    cursor: pointer;
+    position: relative;
+    padding: 0 0 0 30px;
+    margin: 0 15px;
+}
+
+div.game-selection-form .groupsize label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background-color: #f0f0f0;
+    border: 3px solid #f0f0f0;
+    border-radius: 8px;
+}
+
+div.game-selection-form button {
+    margin: 20px auto;
+}

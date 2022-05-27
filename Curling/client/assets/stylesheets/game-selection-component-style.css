@@ -1,0 +1,71 @@
+div.game-selection {
+    display: flex;
+    height: 100%;
+}
+
+div.game-selection-form,
+div.game-selection-form .name input {
+    font-size: 24px;
+    text-align: center;
+}
+
+div.game-selection-form {
+    color: #eeeeee;
+    height: 250px;
+    margin: auto;
+}
+
+div.game-selection-form .name input {
+    color: #333333;
+    background-color: #eeeeee;
+    width: 350px;
+    display: block;
+    margin: 35px auto;
+    padding: 8px;
+    border-radius: 8px;
+    border: 0;
+}
+
+div.game-selection-form .name input:invalid {
+    box-shadow: none; }
+
+div.game-selection-form .difficulty input[type=radio] {
+    display: none;
+}
+
+div.game-selection-form .difficulty input[type=radio]:checked + label:before {
+    background-color: #3f51b5;
+}
+
+div.game-selection-form .difficulty label {
+    font-weight: normal;
+    cursor: pointer;
+    position: relative;
+    padding: 0 0 0 30px;
+    margin: 0 15px;
+}
+
+div.game-selection-form .difficulty label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background-color: #eeeeee;
+    border: 3px solid #eeeeee;
+    border-radius: 8px;
+}
+
+div.game-selection-form button {
+    margin: 35px auto;
+    padding: 5px 20px;
+    font-size: 24px;
+    color: #eeeeee;
+    border-radius: 8px;
+}
+
+div.game-selection-form button::-moz-focus-inner {
+    border:0;
+}

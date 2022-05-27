@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.78.0</authoring_tool>
+    </contributor>
+    <created>2017-04-15T19:20:06</created>
+    <modified>2017-04-15T19:20:06</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="arenaTex_png" name="arenaTex_png">
+      <init_from>arenaTex.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Textures-effect">
+      <profile_COMMON>
+        <newparam sid="arenaTex_png-surface">
+          <surface type="2D">
+            <init_from>arenaTex_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="arenaTex_png-sampler">
+          <sampler2D>
+            <source>arenaTex_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="arenaTex_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <specular>
+              <texture texture="arenaTex_png-sampler" texcoord="UVMap"/>
+            </specular>
+            <shininess>
+              <float sid="shininess">5</float>
+            </shininess>
+            <reflective>
+              <texture texture="arenaTex_png-sampler" texcoord="UVMap"/>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1.309</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="redBarriere-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.004401498 0 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.002325099 0 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Textures-material" name="Textures">
+      <instance_effect url="#Textures-effect"/>
+    </material>
+    <material id="redBarriere-material" name="redBarriere">
+      <instance_effect url="#redBarriere-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Plane-mesh" name="Plane">
+      <mesh>
+        <source id="Plane-mesh-positions">
+          <float_array id="Plane-mesh-positions-array" count="72">-2.25 -3.5 0 2.25 -3.5 0 -2.25 38.5 0 2.25 38.5 0 -2.4 -3.5 0 -2.4 38.5 0 2.4 -3.5 0 2.4 38.5 0 -2.4 38.5 0 2.4 38.5 0 -2.25 38.65 0 2.25 38.65 0 -2.25 -3.5 0.3 -2.25 38.5 0.3 2.25 38.5 0.3 -2.4 -3.5 0.3 -2.4 38.5 0.3 2.4 38.5 0.3 -2.25 38.65 0.3 2.25 38.65 0.3 2.25 -3.5 0.3 2.25 38.5 0.3 2.4 -3.5 0.3 2.4 38.5 0.3</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-normals">
+          <float_array id="Plane-mesh-normals-array" count="27">0 0 1 0 -1 0 0 1 0 0.7071108 0.7071028 0 -0.7071098 0.7071038 0 -1 0 0 1 0 0 0.7071098 0.7071038 0 -0.7071108 0.7071028 0</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-normals-array" count="9" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-map-0">
+          <float_array id="Plane-mesh-map-0-array" count="204">0 1 1 0 1 1 0 0 0 0 0.03301882 0 0.03301882 0 0 0 0 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.9669811 0 0.9669811 0 0.03301882 0 0.03301882 0 0.03301882 0 0.9669811 0 0.9669811 1 0.9669811 1 0 0 0.9669811 0 0.9669811 0 0.9669811 0 0.9669811 0 0.9669811 0 0 0 0.03301882 0 0.03301882 0 0.03301882 0 0 0 0.03301882 0 0.03301882 0 0 0 0.03301882 0 0.9669811 0 0.9669811 1 0.9669811 1 0.03301882 0 0 0 0.03301882 0 0.03301882 1 0.03301882 0 0.03301882 0 0.03301882 1 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0 1 0 0 1 0 0 0 0 0 0 0 0.03301882 0 0.03301882 0 0 0 0.03301882 0 0 0 0.03301882 0 0.03301882 0 0 0 0.9669811 0 0.03301882 0 0.03301882 0 0.03301882 0 0.9669811 0 0.9669811 0 0.9669811 1 0 0 0.03301882 0 0.9669811 0 0.03301882 0 0 0 0 0 0.03301882 0 0 0 0 0 0.9669811 0 0.9669811 0 0.9669811 1 0.03301882 0 0.03301882 0 0 0 0.03301882 1 0.03301882 1 0.03301882 0 0.03301882 1 0.03301882 1 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0 0.03301882 0</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-map-0-array" count="102" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane-mesh-vertices">
+          <input semantic="POSITION" source="#Plane-mesh-positions"/>
+        </vertices>
+        <lines count="2">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <p>8 5 9 7</p>
+        </lines>
+        <polylist material="Textures-material" count="16">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>1 0 0 2 0 1 0 0 2 0 1 3 15 1 4 4 1 5 13 0 18 15 0 19 12 0 20 14 0 21 18 0 22 13 0 23 13 0 24 18 0 25 16 0 26 14 0 27 17 0 28 19 0 29 7 1 39 14 1 40 3 1 41 20 0 42 23 0 43 21 0 44 3 2 48 23 2 49 7 2 50 1 0 54 3 0 55 2 0 56 0 1 57 12 1 58 15 1 59 13 0 72 16 0 73 15 0 74 14 0 75 19 0 76 18 0 77 7 1 87 17 1 88 14 1 89 20 0 90 22 0 91 23 0 92 3 2 96 21 2 97 23 2 98</p>
+        </polylist>
+        <polylist material="redBarriere-material" count="18">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>6 1 6 20 1 7 1 1 8 10 2 9 19 2 10 11 2 11 3 1 12 13 1 13 2 1 14 11 3 15 17 3 16 7 3 17 5 4 30 18 4 31 10 4 32 4 5 33 16 5 34 5 5 35 2 6 36 12 6 37 0 6 38 1 5 45 21 5 46 3 5 47 7 6 51 22 6 52 6 6 53 6 1 60 22 1 61 20 1 62 10 2 63 18 2 64 19 2 65 3 1 66 14 1 67 13 1 68 11 7 69 19 7 70 17 7 71 5 8 78 16 8 79 18 8 80 4 5 81 15 5 82 16 5 83 2 6 84 13 6 85 12 6 86 1 5 93 20 5 94 21 5 95 7 6 99 23 6 100 22 6 101</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Plane" name="Plane" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Plane-mesh" name="Plane">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Textures-material" target="#Textures-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="redBarriere-material" target="#redBarriere-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

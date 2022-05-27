@@ -1,0 +1,19 @@
+.wait {
+    display: flex;
+    height: 100%;
+    background-image: url("../assets/images/background.jpg");
+    background-repeat: repeat;
+    align-items: center;
+    justify-content: center;
+}
+
+.wait-text {
+    background-color: #7e0019;
+    border: 10px solid white;
+    box-shadow: 0 0 10px #333333;
+    color: white;
+    font-size: 20px;
+    width: 500px;
+    padding: 30px;
+    text-align: center;
+}

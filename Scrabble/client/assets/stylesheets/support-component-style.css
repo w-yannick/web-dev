@@ -1,0 +1,27 @@
+table {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 280px;
+    border: 0;
+    background-color: #7e0019;
+    height: 40px;
+}
+
+.support-selected{ 
+    box-shadow: 0 0 15px #000000;    
+}
+
+td {
+    width: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid black;
+    background: url("../assets/images/support.jpg");
+}
+
+table td.selected .filter {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 230, 0.5);
+}

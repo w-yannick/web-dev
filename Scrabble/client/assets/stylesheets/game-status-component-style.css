@@ -1,0 +1,89 @@
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    display: block;
+    width: 100%;
+}
+
+table td, table th {
+    border: 0;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+
+table td {
+    background-color: #d66f70;
+}
+
+table .name {
+    text-align: left;
+    width: 100%;
+}
+
+table .selected td {
+    background-color: #00c052;
+}
+
+.timer {
+    width: 100%;
+    background: rgba(255, 212, 212, 1);
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.modal-box-end {
+    position: absolute;
+    z-index: 99;
+    height: 200%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #333333;
+}
+
+.modal-box-end h3 {
+    margin: 0 0 20px 0;
+}
+
+.modal-box-end h3 {
+    margin: 0 0 20px 0;
+}
+
+.modal-box-end-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 98;
+    background-color: rgba(0, 0, 0, 0.4);
+}    
+
+.btn{
+    width: 100%;
+}
+
+.chat-button {
+    width: 100%;
+    background-image: url("../assets/images/support.jpg");
+}
+
+.filter {
+    width: 100%;
+    background-image: url("../assets/images/support.jpg");
+    color: black;
+    font-size: 14px;
+    padding: 8px;
+    border: 0;
+	
+}
+
+.filter:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,10 @@
+<table class="support" border="1" [ngClass]="{ 'support-selected' : supportIsSelected() }">
+    <tr>
+        <td [ngClass]="{'selected': getSelectedLetter() === i }" *ngFor="let cell of support; let i = index" (click)='setSelectedLetter(i)'
+            (click)='clickSelection()'>
+                <div class="filter">
+                    {{ cell }}
+                </div>
+            </td>
+    </tr>
+</table>

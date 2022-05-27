@@ -1,0 +1,82 @@
+#grid-component {
+    height: 100%;
+    background-image: url("../assets/images/background.jpg");
+    background-repeat: repeat;
+}
+
+.player-name {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 16px;
+    background-color: #7e0019;
+    box-shadow: 0 0 5px #000000;
+    padding: 4px;
+}
+
+.granny-overlay {
+    padding: 20px 0;
+    height: 100%;
+    background-image: url("../assets/images/granny.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    overflow-y: auto;
+}
+
+#grid {
+    font-size: 12px;
+    border-collapse: collapse;
+    display: block;
+    margin: 0 auto;
+    width: 560px;
+    border: 2px solid black;
+}
+
+#grid tr {
+    height: 35px;
+}
+
+#grid tr .number {
+    background: url("../assets/images/support.jpg")
+}
+
+#grid tr td {
+    padding: 0;
+    width: 35px;
+    overflow: hidden;
+    border: 2px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#grid tr .color_3 {
+    background-color: #ff0000;
+}
+
+#grid tr .color_2 {
+    background-color: #3599f8;
+}
+
+#grid tr .color_1 {
+    background-color: #3144ba;
+}
+
+#grid tr .color_4 {
+    background-color: #e9b3b6;
+}
+
+#grid tr .color_0 {
+    background-color: #f8de67;
+}
+
+#grid tr .color_5 {
+    background-color: #00c052;
+}
+
+.sidebar {
+    background-color: #7e0019;
+    height:100%;
+    overflow-y: auto;
+}
